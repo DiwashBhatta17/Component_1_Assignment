@@ -21,5 +21,23 @@ namespace Component_1_Assignment
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void run_Click(object sender, EventArgs e)
+        {
+            // MessageBox.Show(textBox2.Text, "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            new CommandParser(textBox2.Text);
+
+
+        }
+
+        private void syntax_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.run.TabIndex = 0;
             this.run.Text = "Run";
             this.run.UseVisualStyleBackColor = false;
+            this.run.Click += new System.EventHandler(this.run_Click);
             // 
             // syntax
             // 
@@ -56,6 +57,7 @@
             this.syntax.TabIndex = 1;
             this.syntax.Text = "Syntax";
             this.syntax.UseVisualStyleBackColor = false;
+            this.syntax.Click += new System.EventHandler(this.syntax_Click);
             // 
             // textBox1
             // 
@@ -81,6 +83,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(553, 22);
             this.textBox2.TabIndex = 4;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Form1
             // 

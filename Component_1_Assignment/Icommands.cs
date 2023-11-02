@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Component_1_Assignment
 {
-    internal interface Interface1
+    internal interface Icommands
     {
-         void execute();
+        void execute();
     }
 }

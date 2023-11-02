@@ -29,8 +29,11 @@ namespace Component_1_Assignment
 
         private void run_Click(object sender, EventArgs e)
         {
+            Graphics g = panel1.CreateGraphics();
             // MessageBox.Show(textBox2.Text, "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            new CommandParser(textBox2.Text);
+            new CommandParser(textBox2.Text , g);
+            
+
 
 
         }

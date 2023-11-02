@@ -1,21 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Component_1_Assignment.Shapes;
 
 namespace Component_1_Assignment
 {
     internal class CommandParser
     {
         private string[] commands;
+        private Graphics graphics;
+      
 
-        public CommandParser(string commands) 
+
+        public CommandParser(string commands, Graphics g) 
         { 
+
             this.commands = commands.Split(' ',' ');
+            this.graphics = g;
             classCaller();
 
            
@@ -35,9 +42,13 @@ namespace Component_1_Assignment
             {
                 // new FillColor(commands[1]);
             }
-            else if (this.commands[0].ToLower() == "rectangle")
+            else if (commands[0].ToLower() == "rectangle" && 
+                int.TryParse(commands[1], out int posX) && int.TryParse(commands[2], out int posY) 
+                && int.TryParse(commands[3], out int width) && int.TryParse(commands[4], out int height) && commands.Length <= 5)
             {
-                // new Rectangle(commands[1],commands[2]);
+             
+
+                new DrawRectangle(posX,posY,width,height, this.graphics);
             }
             else if(this.commands[0].ToLower() == "circle")
             {

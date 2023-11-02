@@ -55,9 +55,9 @@ namespace Component_1_Assignment
                 new DrawCircle(radius, graphics);
             }
 
-            else if (this.commands[0].ToLower() == "triangle")
+            else if (this.commands[0].ToLower() == "triangle" && int.TryParse(commands[1], out int sideA) && commands.Length <=2)
             {
-                // new Triangle(commands[1]);
+                 new DrawTriangle(sideA,graphics);
             }
 
             else

@@ -30,7 +30,7 @@ namespace Component_1_Assignment.Shapes
         {
             try
             {
-                this.g.DrawRectangle(Pens.Black, posX, posY, width, height);
+                g.DrawRectangle(Pens.Black, posX, posY, width, height);
             }
             catch (Exception ex)
             {

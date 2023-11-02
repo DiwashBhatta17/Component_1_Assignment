@@ -42,22 +42,24 @@ namespace Component_1_Assignment
             {
                 // new FillColor(commands[1]);
             }
-            else if (commands[0].ToLower() == "rectangle" && 
-                int.TryParse(commands[1], out int posX) && int.TryParse(commands[2], out int posY) 
+
+            else if (commands[0].ToLower() == "rectangle" &&
+                int.TryParse(commands[1], out int posX) && int.TryParse(commands[2], out int posY)
                 && int.TryParse(commands[3], out int width) && int.TryParse(commands[4], out int height) && commands.Length <= 5)
             {
-             
+                new DrawRectangle(posX, posY, width, height, this.graphics);
+            }
 
-                new DrawRectangle(posX,posY,width,height, this.graphics);
-            }
-            else if(this.commands[0].ToLower() == "circle")
+            else if (this.commands[0].ToLower() == "circle" && int.TryParse(commands[1], out int radius) && commands.Length <=2)
             {
-                // new Circle(commands[1]);
+                new DrawCircle(radius, graphics);
             }
+
             else if (this.commands[0].ToLower() == "triangle")
             {
                 // new Triangle(commands[1]);
             }
+
             else
             {
                 MessageBox.Show("Invalid Command ! please Enter the correct command", "Result", MessageBoxButtons.OK, MessageBoxIcon.Error);

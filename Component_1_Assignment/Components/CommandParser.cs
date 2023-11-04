@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Component_1_Assignment.BasicCommands;
 using Component_1_Assignment.Shapes;
 
 namespace Component_1_Assignment
@@ -29,14 +30,14 @@ namespace Component_1_Assignment
         }
         private void classCaller()
         {
-            if (this.commands[0].ToLower() == "moveto")
+            if (this.commands[0].ToLower() == "moveto" && int.TryParse(commands[1], out int xAxis) && int.TryParse(commands[2], out int yAxis))
             {
-                // new MoveTo(commands[1],commands[2]);
+                new MoveTo(xAxis,yAxis,graphics);
             }
 
-            else if (this.commands[0].ToLower() == "drawto")
+            else if (commands[0].ToLower() == "drawto" && int.TryParse(commands[1], out int endX) && int.TryParse(commands[2], out int endY))
             {
-                // new DrawTo(commands[1],commands[2]);
+                new DrawLine(endX, endY, graphics);
             }
             else if (this.commands[0].ToLower() == "fill")
             {

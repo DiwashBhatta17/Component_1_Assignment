@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Component_1_Assignment.BasicCommands;
+using Component_1_Assignment.Components;
 using Component_1_Assignment.Shapes;
 
 namespace Component_1_Assignment
@@ -22,7 +23,7 @@ namespace Component_1_Assignment
         public CommandParser(string commands, Graphics g) 
         { 
 
-            this.commands = commands.Split(' ',' ');
+            this.commands = commands.Trim().Split(' ',' ');
             this.graphics = g;
             classCaller();
 
@@ -32,16 +33,16 @@ namespace Component_1_Assignment
         {
             if (this.commands[0].ToLower() == "moveto" && int.TryParse(commands[1], out int xAxis) && int.TryParse(commands[2], out int yAxis))
             {
-                new MoveTo(xAxis,yAxis,graphics);
+                new MoveTo(xAxis, yAxis, graphics);
             }
 
             else if (commands[0].ToLower() == "drawto" && int.TryParse(commands[1], out int endX) && int.TryParse(commands[2], out int endY))
             {
                 new DrawLine(endX, endY, graphics);
             }
-            else if (this.commands[0].ToLower() == "fill")
+            else if (commands[0].ToLower() == "fill" &&(commands[1].ToLower() == "on" || commands[1].ToLower() == "off"))
             {
-                // new FillColor(commands[1]);
+                new Filled(commands[1]);
             }
 
             else if (commands[0].ToLower() == "rectangle" &&

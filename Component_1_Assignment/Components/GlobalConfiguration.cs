@@ -12,5 +12,7 @@ namespace Component_1_Assignment.Components
         public static Color penColor {  get; set; }= Color.Black;
         public static int xPoint { get; set; } = 10;
         public static int yPoint { get; set;} = 10;
+
+        public static bool isFillOn { get; set; } = false;
     }
 }

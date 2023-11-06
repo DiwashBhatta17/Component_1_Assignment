@@ -38,8 +38,8 @@ namespace Component_1_Assignment.Shapes
             
             using (Pen pen = new Pen(Color.Black))
             {
-                g.DrawLines(pen, points);
-                g.DrawLine(pen, points[2], points[0]);
+               
+                g.FillPolygon(Brushes.Black, points);
             }
         }
     }

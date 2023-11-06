@@ -16,31 +16,30 @@ namespace Component_1_Assignment
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void run_Click(object sender, EventArgs e)
         {
             Graphics g = panel1.CreateGraphics();
             // MessageBox.Show(textBox2.Text, "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            new CommandParser(textBox2.Text , g);
-            
+            if(textBox2.Text != "")
+            {
+                new CommandParser(textBox2.Text, g);
+            }
 
+            if (textBox1.Text != "")
+            {
+                string[] commands = textBox1.Lines; 
+                foreach (string commandLine in commands)
+                {
+                    new CommandParser(commandLine, g); 
+                }
 
-
+            }
         }
-
         private void syntax_Click(object sender, EventArgs e)
         {
 
         }
+
+     
     }
 }

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicCommands\DrawLine.cs" />
+    <Compile Include="BasicCommands\Filled.cs" />
     <Compile Include="BasicCommands\MoveTo.cs" />
     <Compile Include="Components\CommandParser.cs" />
     <Compile Include="Components\GlobalConfiguration.cs" />

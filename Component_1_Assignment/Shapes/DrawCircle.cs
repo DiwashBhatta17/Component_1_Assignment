@@ -17,9 +17,6 @@ namespace Component_1_Assignment.Shapes
             this.graphics = graphics;
 
             execute();
-
-          
-
         }
         
         public void execute()

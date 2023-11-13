@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Component_1_Assignment.Components;
 
 namespace Component_1_Assignment.Shapes
 {
@@ -21,7 +22,19 @@ namespace Component_1_Assignment.Shapes
         
         public void execute()
         {
-            graphics.DrawEllipse(Pens.Black, 200, 200, radius, radius);
+            Pen pen = new Pen(GlobalConfiguration.penColor);
+            SolidBrush brush = new SolidBrush(GlobalConfiguration.penColor);
+
+            if (GlobalConfiguration.isFillOn)
+            {
+                graphics.FillEllipse(brush, 200, 200, radius, radius);
+            }
+            else
+            {
+                graphics.DrawEllipse(pen, 200, 200, radius, radius);
+            }
+
+           
         }
     }
 }

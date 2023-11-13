@@ -40,6 +40,9 @@ namespace Component_1_Assignment
 
         }
 
-     
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

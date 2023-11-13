@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Component_1_Assignment.Components;
 
 namespace Component_1_Assignment.Shapes
 {
@@ -30,7 +31,21 @@ namespace Component_1_Assignment.Shapes
         {
             try
             {
-                g.FillRectangle(Brushes.Black, posX, posY, width, height);
+                Pen pen = new Pen(GlobalConfiguration.penColor);
+                SolidBrush brush = new SolidBrush(GlobalConfiguration.penColor);
+
+                if (GlobalConfiguration.isFillOn)
+                {
+                    g.FillRectangle(brush, posX, posY, width, height);
+                }
+                else
+                {
+                    g.DrawRectangle(pen, posX, posY, width, height);
+                }
+
+
+
+
             }
             catch (Exception ex)
             {

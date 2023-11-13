@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Component_1_Assignment.Components;
 
 namespace Component_1_Assignment.Shapes
 {
@@ -15,7 +16,7 @@ namespace Component_1_Assignment.Shapes
         public DrawTriangle(int sideX, Graphics graphics)
         {
             this.sideX = sideX;
-           // this.sideY = sideY;
+         
             this.g = graphics;
 
             execute();
@@ -35,11 +36,16 @@ namespace Component_1_Assignment.Shapes
                 new Point(centerX + halfLengthX, centerY + height / 2)  
             };
 
-            
-            using (Pen pen = new Pen(Color.Black))
+            Pen pen = new Pen(GlobalConfiguration.penColor);
+            SolidBrush brush = new SolidBrush(GlobalConfiguration.penColor);
+
+            if (GlobalConfiguration.isFillOn)
             {
-               
-                g.FillPolygon(Brushes.Black, points);
+                g.FillPolygon(brush, points);
+            }
+            else
+            {
+                g.DrawPolygon(pen, points);
             }
         }
     }

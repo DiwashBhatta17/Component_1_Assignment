@@ -13,6 +13,7 @@ using Component_1_Assignment.Shapes;
 
 namespace Component_1_Assignment
 {
+
     internal class CommandParser
     {
         private string[] commands;
@@ -43,6 +44,11 @@ namespace Component_1_Assignment
             else if (commands[0].ToLower() == "fill" &&(commands[1].ToLower() == "on" || commands[1].ToLower() == "off"))
             {
                 new Filled(commands[1]);
+            }
+
+            else if (commands[0].ToLower() == "color")
+            {
+                new ColorHandler(commands[1]);
             }
 
             else if (commands[0].ToLower() == "rectangle" &&

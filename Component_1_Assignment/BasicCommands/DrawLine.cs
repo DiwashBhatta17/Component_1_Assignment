@@ -21,14 +21,13 @@ namespace Component_1_Assignment.BasicCommands
             this.g = g;
             this.endX = endX;   
             this.endY = endY;
-
             execute();
         }
 
         public void execute()
         {
-            Pen pen = new Pen(Color.Black);
-            g.DrawLine(Pens.Black, posX, posY, endX, endY);
+            Pen pen = new Pen(GlobalConfiguration.penColor);
+            g.DrawLine(pen, posX, posY, endX, endY);
         }
     }
 }

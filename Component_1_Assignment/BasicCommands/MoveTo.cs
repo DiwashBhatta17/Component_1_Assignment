@@ -11,8 +11,7 @@ namespace Component_1_Assignment.BasicCommands
 { 
     internal class MoveTo : Icommands
     {
-        private int x;
-        private int y;
+       
         private Graphics g;
         private Font font;
         private Brush brush;

@@ -51,6 +51,7 @@
     <Compile Include="BasicCommands\Filled.cs" />
     <Compile Include="BasicCommands\MoveTo.cs" />
     <Compile Include="Components\CommandParser.cs" />
+    <Compile Include="Components\FileHandler.cs" />
     <Compile Include="Components\GlobalConfiguration.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

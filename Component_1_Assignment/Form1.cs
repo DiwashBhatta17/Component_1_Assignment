@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Component_1_Assignment.Components;
 
 namespace Component_1_Assignment
 {
@@ -40,8 +41,30 @@ namespace Component_1_Assignment
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void save_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(textBox1.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+             try
+             {
+
+                 FileHandler fileHandler = new FileHandler();
+                 fileHandler.Save(textBox1.Text);
+
+                 MessageBox.Show("File saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show($"Error while saving file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+        }
+
+        private void load_Click(object sender, EventArgs e)
+        {
+            FileHandler fileHandler = new FileHandler();
+            string text = fileHandler.Load();
+            textBox1.Text = text;
+
 
         }
     }

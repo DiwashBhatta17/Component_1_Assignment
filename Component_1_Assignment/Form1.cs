@@ -19,23 +19,23 @@ namespace Component_1_Assignment
         }
         private void run_Click(object sender, EventArgs e)
         {
-            Graphics g = panel1.CreateGraphics();
-            // MessageBox.Show(textBox2.Text, "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if(textBox2.Text != "")
+            if (textBox2.Text.ToLower() != "run" && textBox2.Text != "")
             {
-                new CommandParser(textBox2.Text, g);
+                Graphics gCommandParser = panel1.CreateGraphics();
+                new CommandParser(textBox2.Text, gCommandParser);
+                gCommandParser.Dispose(); // Dispose the Graphics object used by CommandParser
             }
 
-            if (textBox1.Text != "")
+            if (textBox2.Text.ToLower() == "run")
             {
-                string[] commands = textBox1.Lines; 
-                foreach (string commandLine in commands)
-                {
-                    new CommandParser(commandLine, g); 
-                }
-
+                Graphics gProgramHandler = panel1.CreateGraphics();
+                gProgramHandler.Clear(panel1.BackColor);
+                ProgramHandler p = new ProgramHandler(gProgramHandler);
+                p.Execute(textBox1.Text);
+                gProgramHandler.Dispose(); // Dispose the Graphics object used by ProgramHandler
             }
         }
+
         private void syntax_Click(object sender, EventArgs e)
         {
 
@@ -43,11 +43,8 @@ namespace Component_1_Assignment
 
         private void save_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(textBox1.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
              try
              {
-
                  FileHandler fileHandler = new FileHandler();
                  fileHandler.Save(textBox1.Text);
 
@@ -64,8 +61,6 @@ namespace Component_1_Assignment
             FileHandler fileHandler = new FileHandler();
             string text = fileHandler.Load();
             textBox1.Text = text;
-
-
         }
     }
 }

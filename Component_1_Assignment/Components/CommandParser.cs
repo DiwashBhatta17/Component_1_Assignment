@@ -50,6 +50,10 @@ namespace Component_1_Assignment
             {
                 new ColorHandler(commands[1]);
             }
+            else if (commands[0].ToLower() == "run")
+            {
+                
+            }
 
             else if (commands[0].ToLower() == "rectangle" &&
                 int.TryParse(commands[1], out int posX) && int.TryParse(commands[2], out int posY)
